@@ -2,6 +2,8 @@
 
 Self-taught and pragmatic Software Engineer with 4 years of experience. Strong understanding of computer science principles and a proven ability to solve real-world problems. Committed to lifelong learning and improving systems. Seeking challenging roles that allow me to dive deep into the codebase and collaborate with users and stakeholders to make strategic product decisions.
 
+![[assets/database.png]]
+
 ## EXPERIENCE
 
 **Expedia Group - Seattle, WA**  
