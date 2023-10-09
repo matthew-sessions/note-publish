@@ -1,87 +1,81 @@
-# About Me
-The context manager is responsible for determining what the user is trying to get the LLM to accomplish. To get the Context manager to function as expected, the MVP of this component will use  [Chain-of-Thought ](https://aman.ai/primers/ai/prompt-engineering/#automatic-chain-of-thought-auto-cot) prompts. Once there is a functioning prototype of the CTXM, various steps in the CTXM flow can be refined with purpose built models.
+# Matthew Sessions
 
-### Managing User Input
-When a user sends data to the CTXM the first step is determine if there is an on going context that requires back and forth interaction with the LLM. A user can only have a single active context per channel/conversation. When processing a user input the Prompt System will check against the context table if the user has an ongoing context based on USER_ID and CTX_SYSTEM_ID.
-```python
-current_context = await CTXM.get_current_context(user_i=user_id, ctx_system_id=conversation_id)
-```
-##### Context Schema
-```json
-{
-    "ctx_system_id": "<id>",
-    "user_id": "<id>",
-    "objective_id": "<id>",
-    "objective_scope": "Description of what the user is trying to achive"
-}
-```
+Self-taught and pragmatic Software Engineer with 4 years of experience. Strong understanding of computer science principles and a proven ability to solve real-world problems. Committed to lifelong learning and improving systems. Seeking challenging roles that allow me to dive deep into the codebase and collaborate with users and stakeholders to make strategic product decisions.
 
-If the user has an ongoing context, the model will ensure that the users most recent input aligns with the continuation of the objective scope.
-```python
-context_continueation = await CTXM.context_aligns(current_context.objective_scope, user_input.input_history)
-```
-The prompt to align the input and the current context might look something like this:
-```txt
-Determine if the last user message is related to the following context description:
+## EXPERIENCE
 
-context description={context_scope}
+**Expedia Group - Seattle, WA**  
+*Software Engineer (Data)*  
+*Jun 2020 - Present*
 
-Messages:
-User: I need to save some links with info about them.
-Bot: Sure, what links do you want to save?
+- Designed and led a project to create a lightweight Looker alternative for real-time reports, leveraging Node.js, GraphQL, and React.
+- Created a real-time Kafka Streams Processor that monitors the state and activity of thousands of customer service agents, manages out-of-order events, and joins multiple Kafka Topics into a single source of truth using Cassandra, Spring Kafka, and Faust (Asyncio Python).
+- Engineered a custom Kafka adapter that enriches Kafka Events and prepares records to be ingested by Druid to enable real-time reporting and decision-making.
+- Designed and created a Kotlin package called Segment Series that generalizes state tracking across a timeline of Events/Data.
+- Created real-time event streaming micro-services that meet a 5-second data recently SLA.
+- Designed a production-ready Python Package Template that integrates with existing DevOps infrastructure (Jenkins, Spinnaker, Backstage, Artifactory, and Github).
 
-Last user message: https://bot.com I use this link for chating with hot bots.
+**Geekbuying/Tronsmart - Shenzhen, China**  
+*Digital Marketing Analyst*  
+*March 2018 - Aug 2019*
 
-Respond only with:
-{
-	related: true
-}
-or
-{
-	related: false
-}
-```
+- Built web crawlers that provide insight into our competitor's pricing strategies and product placement.
+- Created custom competitor reports to help drive the decisions of product managers, sourcing managers, and the marketing team.
+- Managed all Facebook marketing campaigns (Buying & Planning).
+- Studied demographic data (using Python) to determine optimal target audiences & understand competitor offerings.
+- Developed scalable marketing systems to turn offline retail traffic into digital leads.
+- Created a Facebook Messenger marketing strategy that decreased cost per lead by 65%.
 
-If the last user input aligns, then we will pass the context over to the Object Manager.
-If the last user input does not align, or if there is no ongoing context then we will determine the scope of the context and create an active context.
+## PROJECTS
 
-### Context Scoping
-Creating the scope of the context is a very import step in the prompt system. It is the core driver for determining what action the system needs to take. This scope will be passed to a vector search that will provide instruction to the system on how to accomplish what the user has intended the system to do.
+- **MATL** - Use Tensorflow Models to supercharge your image labeling workflows [Link](https://www.producthunt.com/products/malt-model-assisted-labeling-toolkit)
+- **Notion Powered E-commerce** - [Link](https://matthewlsessions.com/notion)
+- **Home Values** - Explore Zillow’s research data - [Link](https://matthewlsessions.com/housing)
+- **Citrics** - City data comparison application - [Link](https://youtu.be/1pL9bVkWPO4)
+- **StartupUtils** - Templates to build and Deploy MVPs fast
+- **FastAPI** - Boilerplate template to handle email validation, JWT authentication, and SSL certificates - [Link](https://github.com/StartupUtils/FastAPI_MongoDB)
+- **Single Node MongoDB** - Containerized MongoDB instance that can run on a single node before a product hits scale - [Link](https://github.com/StartupUtils/SingleNodeMongoDB)
+- **React Native Template** - Boilerplate React Native application with ready-to-go authentication components - [Link](https://github.com/StartupUtils/ReactNative_EmailAuth)
 
-##### Brute force Context Scoping Prompt
-```txt
-Provide a description of what the user is trying to get you to accomplish based on their messages.
+## CONTACT
 
-Examples:
+- Phone: (385) 626-1463
+- Email: matthewlsessions@gmail.com
+- Website: [matthewlsessions.com](https://matthewlsessions.com)
 
-Bot: You are welcome!
-User: I need to remember this link for searching the logs be user ID. https://logs.com/themainid
+## RELEVANT SKILLS
 
-Response:
-{
-	"objective_scope": "SAVE_DATA: Save a link they is used for searching logs"
-}
+- Python Programming
+- Flask/Django/FastApi
+- Faust (Kafka Streaming)
+- Kotlin & Spring
+- Data Analysis
+- Data Engineering
+- Machine Learning
+- SQL & NoSQL
+- Data Pipeline/API Creation
+- Amazon Web Services
+- Data Exploration & Visualization
+- Docker
+- Kafka/Event Streaming
+- React/NextJS
+- Node/Express
+- Apollo (GraphQL)
 
-Bot: Here is code on how to...
-User: Please provide the email address of the guy that is responsible for managing roofing contracts
+## EDUCATION
 
-Response:
-{
-	"objective_scope": "LOAD_DATA: Look up the email for the guy that manages roofing contracts"
-}
+**Lambda School - Data Science**  
+*Aug 2019 - May 2020*
 
-Bot: I have saved that info for you!
-User: React code that makes a button spin when clicked
+- Intensive training in Linear Algebra, Statistics, Natural Language Processing, Machine Learning, Data Engineering, and Cloud Computing.
 
-Response:
-{
-	"objective_scope": "LLM_RESPONSE: Provide a basic LLM response to the user's message about a react code sample of a button that spins when clicked."
-}
+**Beijing Language University - Business Chinese**  
+*Aug 2016 - Dec 2017*
 
-The actual Conversation:
-User: Can you give the link to the latest prompt engineering reading about COT prompting?
+- Passed the CSC exam (The official Chinese Government Language exam for foreigners) and passed HSK 5 (Chinese proficiency exam with six levels).
 
-Your Response:
-```
+## FOREIGN LANGUAGES
 
-Once the object scope is collected, this information can be passed to the Objective Manager
+- Malay - Fluent
+- Mandarin (中文) - Proficient
+- Indonesian - Proficient
