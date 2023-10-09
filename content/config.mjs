@@ -1,6 +1,6 @@
 export default {
-    title: "My Awesome Blog",
-    author: "John",
+    title: "Matthew Sessions",
+    author: "Matthew",
     search: {
         provider: "kbar",
       },
