@@ -8,6 +8,10 @@ export default {
         {
             "href": "/resume",
             "name": "Resume"
+        },
+        {
+            "href": "/ctrlgpt",
+            "name": "ctrlGPT"
         }
     ]
 };
