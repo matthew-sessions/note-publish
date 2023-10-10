@@ -1,4 +1,4 @@
-> *[Matthew] is an enthusiastic builder, driven by a passion for exploration and an unyielding commitment to learning. Proficient in multiple languages, his experiences have led him to live and work in various regions, including Southeast Asia and China, significantly deepening his understanding of different cultures. Presently, his unwavering dedication is directed toward the aspiration of becoming a 10x software engineer, as he diligently works on creating intricate systems and groundbreaking projects.*
+*[Matthew] is an enthusiastic builder, driven by a passion for exploration and an unyielding commitment to learning. Proficient in multiple languages, his experiences have led him to live and work in various regions, including Southeast Asia and China, significantly deepening his understanding of different cultures. Presently, his unwavering dedication is directed toward the aspiration of becoming a 10x software engineer, as he diligently works on creating intricate systems and groundbreaking projects.*
 
 You can learn more about my background [[resume/index|here]]
 
