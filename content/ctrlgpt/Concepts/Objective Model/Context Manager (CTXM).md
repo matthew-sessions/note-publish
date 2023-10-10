@@ -1,3 +1,5 @@
+# Context Manager (CTXM)
+
 The context manager is responsible for determining what the user is trying to get the LLM to accomplish. To get the Context manager to function as expected, the MVP of this component will use  [Chain-of-Thought ](https://aman.ai/primers/ai/prompt-engineering/#automatic-chain-of-thought-auto-cot) prompts. Once there is a functioning prototype of the CTXM, various steps in the CTXM flow can be refined with purpose built models.
 
 ### Managing User Input
