@@ -1,3 +1,5 @@
+# System Controls
+
 In ctrlGPT controls are the foundation of the system when it comes to interfacing with LLMs. At a system level, there are only three controls:
 
 * `load_data`: If the user is indicating that they want to retrieve data they has been previously saved be the system, this control will allow for that. As of now, load data will interface with a series of Vector Embeddings that are stored in a database and possible interface directly with a traditional table.
