@@ -3,5 +3,11 @@ export default {
     author: "Matthew",
     search: {
         provider: "kbar",
-      },
+    },
+    navLinks: [
+        {
+            "href": "/resume",
+            "name": "Resume"
+        }
+    ]
 };
