@@ -1,3 +1,4 @@
+# User Controls
 
 A user control is a child control to a System Control. A user Control will fit under the core SAVE_DATA and LOAD_DATA controls but will likely have extra logic attached. For example, a System Save Data Control with no child control attached will flow as follows:
 
