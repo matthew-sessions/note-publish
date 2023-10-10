@@ -1,3 +1,5 @@
+# Objective Manager
+
 The Objective Manager can be thought of as the brain of the System. The Context Manager determines what the system needs to accomplish and the Objective Manager determines how to accomplish the objective.
 
 #### Objective Config for Objective Alignment
