@@ -1,0 +1,1 @@
+A managed control is conceptually the same as a [[User Controls|User Control]] but is onboarded and managed by ctrlGPT. As more Managed Controls are onboarded, the more power full the platform will become.
