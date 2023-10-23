@@ -54,7 +54,7 @@ Bot: Sounds good, can you give me more info such as how many bedrooms you'd pref
 User: I am actually okay with slighly older homes. I need at least 4 bedrooms and a somewhat large yard for my dog. I like to be close to the city but still feel relaxed
 
 Response:
-{
+{{
 	"home_price": 400000,
 	"year_built": 1980,
 	"location": "Denver, Co",
@@ -62,7 +62,7 @@ Response:
 	"bedrooms": 4,
 	"bathrooms": null,
 	"general_vide": "The user likes to have access to a city but still wants to stay in touch with nature. They have a dog so access to nice areas to walk and explore would be preferable. They would likely be more happy in an area the is spread out."
-}
+}}
 
 Now solve your objective!
 Objective: {objective_description}
@@ -77,7 +77,7 @@ What we need to know:
 Messages:
 {messages}
 
-Your Response:
+Your Response in JSON:
 ```
 
 ### Objective Reactions
@@ -89,35 +89,37 @@ Respond back to the use based on what you were able to achomplish.
 
 Example:
 Objective: Save info the user will provide.
-Actions: No action take becuase the user has not provided data to be saved.
+Scope: Save links that the user will share.
 Needed info:
-	data: General data the user will provide.
+	data: user's provided links
 
 Response:
-Sure, I'd be happy to save some info for your. Can you please let me know what info you want saved?
+Sure, I'd be happy to save some links for you. Can you send me the link along with a description of what the links are for?
 
 Example:
-Objective: Retrive info that has been previously saved.
-Actions: No action take becuase the user has not specified what info should be retrieved.
+Objective: Find data the user has saved.
+Scope: No action take becuase the user has not specified what info should be retrieved.
 Needed info:
 	data: Specific info to be searched for.
+	summary: A breif summary of the conversation with any additional context that will help power the search
 
 Response:
 I can help you look up thinks you have saved before. Can you tell me what you want me to retrieve for you?
 
 Example:
-Objective: Save a link that is usefull for learning about finance.
-Actions: Saved the link for the user with added context about the link.
+Objective: Saved the link for the user with added context about the link.
+Scope: Save a link that is usefull for learning about finance.
 Needed info:
 	None
-Possible Response: The saved info can be provided if the users asks for it.
+Scope Complete: True
+
 
 Response:
 I saved that link for you! If you ever need help finding this link just let me know!
 
 Now you response to the user:
-Objective: {abjective}
-Actions: {actions}
+Objective: {objective}
+Scope: {scope}
 Needed info:
 	{needed_info}
 {extra_info}
