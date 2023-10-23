@@ -205,7 +205,7 @@ We should, however, refrain from bitmap indexing any of our `status` fields as t
 
 Now that we've successfully set up streaming services and executed an effective ingestion spec, we've actualized a table in druid named `fleet_breakdown`, which is structured as follows:
 
-| `__time` | driver_name | driver_id | driver_lat | driver_long | organ_destination_lat | organ_destination_long | organ_pickup_location_lat | organ_pickup_location_long | fleet_id | management_org | county_operation | driver_status | routing_status | priority_level |
+| `__time` aka action_time | driver_name | driver_id | driver_lat | driver_long | organ_destination_lat | organ_destination_long | organ_pickup_location_lat | organ_pickup_location_long | fleet_id | management_org | county_operation | driver_status | routing_status | priority_level |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 2021-01-01 12:00:00 | John Doe | D123 | 37.7749 | -122.4194 | 34.0522 | -118.2437 | 40.7128 | -74.0060 | F123 | OrgA | CountyA | Active | On Route | 1 |
 | 2021-01-02 08:00:00 | Jane Smith | D124 | 34.0522 | -118.2437 | 37.7749 | -122.4194 | 42.3601 | -71.0589 | F124 | OrgB | CountyB | Active | On Route | 2 |
