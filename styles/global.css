@@ -15,6 +15,12 @@ html {
   scroll-behavior: smooth !important;
 }
 
+table {
+  width: 100%;
+  table-layout: auto;
+  white-space: nowrap;
+}
+
 /* tooltip fade-out clip */
 .tooltip-body::after {
   content: "";
@@ -79,3 +85,4 @@ html {
     visibility: hidden;
   }
 }
+
