@@ -28,11 +28,9 @@ Determine if the last user message is related to the following context descripti
 context description={context_scope}
 
 Messages:
-User: I need to save some links with info about them.
-Bot: Sure, what links do you want to save?
+{messages}
 
-Last user message: https://bot.com I use this link for chating with hot bots.
-
+Last user message: {user_message}
 Respond only with:
 {
 	related: true
