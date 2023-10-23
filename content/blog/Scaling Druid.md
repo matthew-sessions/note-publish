@@ -144,7 +144,7 @@ if value.driver_id is not None and value.routing_status in VALID_ROUTING_STATUSE
 ```
 
 As shown, the three input topics that collect data from our constituent services all encompass a different schema. The repartitioner takes charge of extracting data from the input events and generating a repartitioned event with a standardized schema. The process essentially involves tailoring an event that’s compliant with our stateful service, by aligning data from the input topics into four key concepts: `event_type`, `action_time`, `processing_time` and `data`.
-#### Driver State Tracker
+### Driver State Tracker
 Developing stateful stream processing applications may prove demanding, hence, I won’t dive into the architecture of the `Driver State Tracker` that we’re looking to establish in this archive. We will, however, grasp the purpose of this application and the nature of data it produces.
 
 Keeping our ultimate project goal in mind is necessary while integrating the data of three distinct systems. We’re aiming to build a tool that precisely depicts the latest driver statuses from all systems, but also ensures enough granularity in the data to allow breakdown of individual driver activity. Effectively, our state tracking system is designed to merge data from all three systems for each event it receives based on the nearest timestamp. 
@@ -161,7 +161,7 @@ After unifying the data into a single data stream fit for our reporting tool, th
 
 Druid ingestion has numerous features. We'll not delve into all of them for now - read the [Druid Ingestion Documentation](https://druid.apache.org/docs/latest/ingestion/) for more insights. For this solution, we're designing a rudimentary ingestion spec comprising time-based columns, metrics, dimensions, and bitmap-indexed dimensions. Please note that we're not employing Druid's [Rollup Feature](https://druid.apache.org/docs/latest/ingestion/rollup).
 
-#### Time Based Segments
+### Time Based Segments
 
 Druid segments data according to a time-based column, necessitating a column definition that can partition data when ingesting into Druid. This column will serve to segment data and store each in a time-based directory structure. After identifying the time column, we can decide the granularity of the segment - hour, day, week, month, or year.
 
@@ -185,7 +185,7 @@ Your time-based column typically encapsulates a very recent timestamp. If the ti
 
 For our requirements, we'll select `action_time` as our `__time` column, as it presents a relatively unique and recent timestamp based on the event generation time.
 
-#### Configuring Metrics
+### Configuring Metrics
 
 Metrics are commonly represented by numeric values that have a potential for aggregation. Albeit Druid brings to the table a plethora of [aggregation functions](https://druid.apache.org/docs/latest/querying/sql-aggregations) beyond the basic `count`, `sum`, `min`, and `max`, we don't necessarily need to utilize all of them for our requirement. Instead, the `LATEST` aggregation would suffice as it renders a recent value based on a time-related column. So, reasonably, our Metrics would include:
 
@@ -193,7 +193,7 @@ Metrics are commonly represented by numeric values that have a potential for agg
 * `long` - Specifies the longitude, whether of a driver or any other pertinent longitude value we have
 * `priority_level` - Denotes the priority level pertinent to the organ transfer
 
-#### Deciding on Dimensions & Bitmap Indexes
+### Deciding on Dimensions & Bitmap Indexes
 
 Dimensions represent columns which can conveniently be used for grouping and filtering options. They are typically string-based and optionally indexable. It's crucial to comprehend your data's cardinality when determining bitmap indexed dimensions. By precisely defining dimensions and indexes, you can remarkably boost your queries' performance.
 
@@ -201,7 +201,7 @@ In relation to our requirement, we possess several dimensions that are apt for b
 
 We should, however, refrain from bitmap indexing any of our `status` fields as these entries tend to vary frequently for every driver. This could generate an over-sized and practically useless index that could potentially slow down our queries.
 
-#### Visualizing Our Final Druid Table
+### Visualizing Our Final Druid Table
 
 Now that we've successfully set up streaming services and executed an effective ingestion spec, we've actualized a table in druid named `fleet_breakdown`, which is structured as follows:
 
