@@ -3,7 +3,7 @@
 You can learn more about my background [[resume/index|here]]
 
 #### Recent Writings
-* [Scaling Druid](https://matthewlsessions/blog/Scaling%20Druid) - I have worked closely with Apace Druid for the last few years. This article is a comprehensive guide on how to scale Druid queries. 
+* [Scaling Druid](https://matthewlsessions.com/blog/Scaling%20Druid) - I have worked closely with Apace Druid for the last few years. This article is a comprehensive guide on how to scale Druid queries. 
 
 #### Quick Links to some projects
 * **[MALT](https://matthewlsessions.com/malt)** - (Model Assisted Labeling Toolkit) supercharges the data labeling workflow by using **Tensorflow Models** to pre-label frame in a video. You can also check it out on [Product Hunt](https://www.producthunt.com/products/malt-model-assisted-labeling-toolkit)
