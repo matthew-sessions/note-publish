@@ -27,7 +27,7 @@ Self-taught and pragmatic Software Engineer with 4 years of experience. Strong u
 
 ## PROJECTS
 
-- **Scaling Apache Druid** - Detailed guide on how to build a scaleable big data reporting system [Link](https://matthewlsessions/blog/Scaling%20Druid)
+- **Scaling Apache Druid** - Detailed guide on how to build a scaleable big data reporting system [Link](https://matthewlsessions.com/blog/Scaling%20Druid)
 - **MATL** - Use Tensorflow Models to supercharge your image labeling workflows [Link](https://www.producthunt.com/products/malt-model-assisted-labeling-toolkit)
 - **Notion Powered E-commerce** - [Link](https://matthewlsessions.com/notion)
 - **Home Values** - Explore Zillow’s research data - [Link](https://matthewlsessions.com/housing)
