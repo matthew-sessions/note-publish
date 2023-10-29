@@ -1,3 +1,9 @@
+--- 
+title: Unleashing the Power of Druid: How to Reason and Scale Queries
+date: 2023-11-01 
+authors: [Matthew Sessions]
+
+---
 # Unleashing the Power of Druid: How to Reason and Scale Queries
 
 ## Introduction to Druid
