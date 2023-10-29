@@ -1,10 +1,9 @@
 --- 
-title: Unleashing the Power of Druid: How to Reason and Scale Queries
+title: Unleashing the Power of Druid - How to Reason and Scale Queries
 date: 2023-11-01 
-authors: [Matthew Sessions]
 
 ---
-# Unleashing the Power of Druid: How to Reason and Scale Queries
+# Unleashing the Power of Druid - How to Reason and Scale Queries
 
 ## Introduction to Druid
 Druid is a real-time, time-segmented database designed for swift analytics queries on extensive datasets. This type of database is particularly fitting when:
